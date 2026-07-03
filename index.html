@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Famous Move Chess</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="control-panel">
+        <div class="brand">
+          <span class="brand-mark">♞</span>
+          <div>
+            <p class="eyebrow">Solo chess trainer</p>
+            <h1>Famous Move Chess</h1>
+          </div>
+        </div>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <span>Level</span>
+            <strong id="levelNumber">1</strong>
+          </div>
+          <div class="track"><span id="levelProgress"></span></div>
+          <p id="levelText">The opponent favors famous opening ideas and light tactics.</p>
+        </section>
+
+        <section id="meterPanel" class="panel">
+          <div class="panel-heading">
+            <span>Mate pressure</span>
+            <strong id="matePercent">0%</strong>
+          </div>
+          <div class="danger-meter"><span id="dangerFill"></span></div>
+          <p id="dangerText">Make a move to see how exposed your king is.</p>
+        </section>
+
+        <section class="panel lesson-panel">
+          <p class="eyebrow">Move lesson</p>
+          <h2 id="lessonTitle">Learn the idea behind the reply</h2>
+          <p id="lessonBody">The opponent will explain famous patterns as they appear.</p>
+        </section>
+
+        <div class="button-row">
+          <button id="newGameButton" class="primary-button" type="button">New game</button>
+          <button id="hintButton" class="secondary-button" type="button">Hint</button>
+        </div>
+      </aside>
+
+      <main class="game-area">
+        <header class="topbar">
+          <div>
+            <p id="statusLine" class="eyebrow">White to move</p>
+            <h2 id="gameTitle">Beat the famous-move engine</h2>
+          </div>
+          <div id="scoreText" class="scorecard">Wins raise the level. Losses teach the pattern.</div>
+        </header>
+
+        <section class="board-zone">
+          <div id="board" class="board" aria-label="Chess board"></div>
+          <aside class="side-panel">
+            <section>
+              <h3>Captured</h3>
+              <div id="capturedPieces" class="captured">No captures yet</div>
+            </section>
+
+            <section id="analysisPanel" hidden>
+              <h3>Game analysis</h3>
+              <p id="analysisSummary"></p>
+              <ol id="analysisList" class="analysis-list"></ol>
+              <form id="analysisQuestionForm" class="analysis-question">
+                <label for="analysisQuestion">Ask about your performance</label>
+                <div>
+                  <input id="analysisQuestion" type="text" placeholder="Where did I go wrong?" autocomplete="off" />
+                  <button class="secondary-button" type="submit">Ask</button>
+                </div>
+              </form>
+              <div id="analysisChat" class="analysis-chat" aria-live="polite"></div>
+            </section>
+
+            <section>
+              <h3>Move history</h3>
+              <ol id="moveList" class="move-list"></ol>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
