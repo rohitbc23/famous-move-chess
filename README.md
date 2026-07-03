@@ -43,7 +43,7 @@ This project uses plain HTML, CSS, JavaScript, and a tiny Node.js static server.
 From PowerShell:
 
 ```powershell
-cd "C:\Users\bcroh\Documents\Famous Move Chess"
+cd "<folder>"
 npm start
 ```
 
